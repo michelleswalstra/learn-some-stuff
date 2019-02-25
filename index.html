@@ -9,39 +9,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|PT+Sans:700" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-	<script>
-		var selectBrand = document.getElementById("select__brand");
-		var optionsBrand = ["Pampers", "Huggies", "Cuddlers"];
-
-		for(var i = 0; i < optionsBrand.length; i++) {
-			var opt = optionsBrand[i];
-			var el = document.createElement("option");
-			el.textContent = opt;
-			el.value = opt;
-			selectBrand.appendChild(el);
-		}​
-  var selectSize = document.getElementById("select__size");
-		var optionsSize = ["Newborn", "1", "2", "3", "4", "4+", "5", "6"];
-
-		for(var i = 0; i < optionsSize.length; i++) {
-			var opt = optionsSize[i];
-			var el = document.createElement("option");
-			el.textContent = opt;
-			el.value = opt;
-			selectSize.appendChild(el);
-		}​
-
-		// Brand Results
-
-		function brandResults() {
-			const chosenBrand = selectBrand.options[selectBrand.selectedIndex].text;
-			const chosenSize = selectSize.options[selectSize.selectedIndex].text;
-
-			if (chosenBrand == "Pampers") {
-				console.log("I like Pampers");
-			}
-		}
-	</script>
 </head>
 <body class="is-boxed has-animations">
     <div class="body-wrap boxed-container">
@@ -102,13 +69,13 @@
             </section>
 			<section class="search">
 				<div class="container-sm">
-					<select id="select__brand" onfocusout="brandResults()">
+					<select id="select__brand">
 						<option value="" selected="selected" disabled>Brand</option>
 					</select>
-					<select id="select__size" onfocusout="sizeResults()">
+					<select id="select__size">
 						<option value="" selected="selected" disabled>Size</option>
 					</select>
-					<a href="" class="btn btn-primary">Search</a>
+					<button class="btn btn-primary" id="search">Search</button>
 				</div>
 			</section>
 			<section class="results">
@@ -117,43 +84,7 @@
 						<h4>Retailer</h4>
 						<h4>Price per Nappy</h4>
 					</div>
-					<ul class="accordion">
-						<li>
-							<div class="accordion-title">
-								<div class="result__content">
-									<span>Takealot</span>
-									<span>R1,50</span>
-								</div>
-								<div class="accordion-icon"></div>
-							</div>
-							<div class="accordion-body">
-								More info + link
-							</div>
-						</li>
-						<li>
-							<div class="accordion-title">
-								<div class="result__content">
-									<span>Dischem</span>
-									<span>R1,60</span>
-								</div>
-								<div class="accordion-icon"></div>
-							</div>
-							<div class="accordion-body">
-								More info + link
-							</div>
-						</li>
-						<li>
-							<div class="accordion-title">
-								<div class="result__content">
-									<span>Clicks</span>
-									<span>R1,75</span>
-								</div>
-								<div class="accordion-icon"></div>
-							</div>
-							<div class="accordion-body">
-								More info + link
-							</div>
-						</li>
+					<ul class="accordion" id="target">
 					</ul>
 				</div>
 			</section>
