@@ -1,0 +1,154 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: color(bg, 1); /* Fallback for when there is no custom background color defined. */
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+hr {
+	border: 0;
+	@include divider();
+	margin-top: 24px;
+	margin-bottom: 24px;
+}
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 24px;
+	padding-left: 24px;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+dl {
+	margin-top: 0;
+	margin-bottom: 24px;
+}
+
+dt {
+	@include font-weight(bold);
+}
+
+dd {
+	margin-left: 24px;
+	margin-bottom: 24px;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+	vertical-align: middle;
+}
+
+figure {
+	margin: 24px 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+figcaption {
+	@include font-size(7, mobile, true, true);
+	padding: 8px 0;
+}
+
+img,
+svg {
+	display: block;
+}
+
+// tables
+table {
+	border-collapse: collapse;
+	margin-bottom: 24px;
+	width: 100%;
+}
+
+tr {
+	border-bottom: 1px solid color(bg, 3);
+}
+
+th {
+	text-align: left;
+}
+
+th,
+td {
+	padding: 10px 16px;
+
+	&:first-child {
+		padding-left: 0;
+	}
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+/* Custom */
+
+// Search
+
+.search {
+	position: relative;
+	select {
+		width: calc(100%/2 - 65px);
+		padding: 10px 15px;
+		border-color: #5E52F6;
+		background: white;
+		border-width: 2px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		line-height: 27px;
+		+ select {
+			margin-left:10px;
+		}
+	}
+	.btn-primary {
+		background: #5E52F6;
+		margin-left:10px;
+		color: white;
+		padding: 13px 20px;
+		border-radius: 5px;
+	}
+}
+
+// Results
+
+.results {
+	margin-top:30px;
+	.result__header {
+		display:flex;
+		width:calc(100% - 32px);
+		justify-content:space-between;
+	}
+
+	.accordion-title {
+		.result__content {
+			display:flex;
+			width:calc(100% - 32px);
+			justify-content: space-between;
+			span {
+				width:auto;
+			}
+		}
+	}
+}
