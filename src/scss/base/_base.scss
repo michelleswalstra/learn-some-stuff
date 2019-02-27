@@ -109,7 +109,7 @@ td {
 .search {
 	position: relative;
 	select {
-		width: calc(100%/2 - 65px);
+		width: calc(100%/2 - 70px);
 		padding: 10px 15px;
 		border-color: #5E52F6;
 		background: white;
@@ -122,12 +122,26 @@ td {
 			margin-left:10px;
 		}
 	}
+	.container-sm {
+		p {
+			display:inline-block;
+			vertical-align: top;
+		}
+	}
 	.btn-primary {
 		background: #5E52F6;
 		margin-left:10px;
 		color: white;
 		padding: 13px 20px;
 		border-radius: 5px;
+	}
+	#search {
+		width: 50px;
+		padding: 0 56px;
+		height: 51px;
+		line-height: 19px;
+		border-radius:5px;
+		margin-left:10px;
 	}
 }
 
